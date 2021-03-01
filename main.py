@@ -18,7 +18,7 @@ def update_file_to_commit():
 def commit_repository(YAML_FILE):
     repo = Repo('.')  # if repo is CWD just do '.'
     repo.index.add([FILE_TO_COMMIT_NAME])
-    repo.index.commit(f'Updated {YAML_FILE["UPDATE_TIMES"]} times on {YAML_FILE["LAST_UPDATE"]}.')
+    repo.index.commit(f'Updated {YAML_FILE["UPDATE_TIMES"]} times. Last update was on {YAML_FILE["LAST_UPDATE"]}.')
     origin = repo.remote('origin')
     origin.push()
 
