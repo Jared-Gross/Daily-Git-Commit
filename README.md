@@ -40,19 +40,7 @@ I will be using `crontab`.
 2.  Add the following line: `59 23 * * * /path/to/yourPythonScript`
 3.  Thats it! Make sure you save and exit.
 
-Additional information about crontab:
-```
-1 2 3 4 5 /path/to/script
-
-1: Minutes (0-59)
-2: Hours (0-23)
-3: Days (1-31)
-4: Month (1-12)
-5: Day of the week(1-7)
-
-/path/to/script - your own python script
-```
-
+Additional information about [crontab](https://crontab.guru)
 ## WHY?!
 
 Only because I wanted to. I hate to see my git commit stats have gaps, and so I made this SUPER simple script to create a commit to this repository to bring up my commit streak :P, and to fill in the gaps where I don't commit on one day. Again this is just a silly project and has no purpose besides to 'cure my ocd' for a perfect commit streak :D. I hope if you have the same issue this script will help.
