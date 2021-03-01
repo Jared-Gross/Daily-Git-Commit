@@ -1,19 +1,21 @@
+import yaml
+from datetime import datetime
 from git import Repo
 # pip install git-python
-import yaml
 
-update_times = {}
+FILE_TO_COMMIT_NAME: str = 'update_me.yaml'
 
-with open("update_me.yaml", 'r') as stream:
-    try:
-        update_times = {'UPDATE_TIMES':int(yaml.safe_load(stream)['UPDATE_TIMES']) + 1}
-    except yaml.YAMLError as exc:
-        print(exc)
-
-with open("update_me.yaml", 'w') as stream:
-    yaml.dump(update_times, stream, default_flow_style=False)
+# read file contents to figure out how many times we commited.
+with open(FILE_TO_COMMIT_NAME, 'r') as file:
+    YAML_FILE = {
+        'UPDATE_TIMES':int(yaml.safe_load(file)['UPDATE_TIMES']) + 1,
+        'LAST_UPDATE':datetime.now().strftime("%A %B %d %Y at %X%p")
+                 }
+# Write new contents to file to be commited.
+with open(FILE_TO_COMMIT_NAME, 'w') as file:
+    yaml.dump(YAML_FILE, file, default_flow_style=False, sort_keys=True)
 repo = Repo('.')  # if repo is CWD just do '.'
-repo.index.add(['update_me.yaml','main.py'])
-repo.index.commit(f'Updated {update_times["UPDATE_TIMES"]} times')
+repo.index.add([FILE_TO_COMMIT_NAME])
+repo.index.commit(f'Updated {YAML_FILE["UPDATE_TIMES"]} times')
 origin = repo.remote('origin')
 origin.push()
