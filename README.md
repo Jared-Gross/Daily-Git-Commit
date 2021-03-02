@@ -37,8 +37,10 @@ If there are errors that occur, open up an issue and I will get it fixed ASAP.
 I will be using `crontab`.
 
 1.  Open crontab with: `sudo crontab -e`
-2.  Add the following line: `59 23 * * * /path/to/yourPythonScript`
+2.  Add the following line: `59 23 * * * `cd /path/to/script/folder/ ; /usr/bin/env /usr/local/bin/python3.8 /path/to/script/main.py`
 3.  Thats it! Make sure you save and exit.
+
+Note. There may be git config issues, I solved them by generating a GitHub token in the developer settings. Using the github token as a login for git.
 
 Additional information about [crontab](https://crontab.guru)
 ## WHY?!
