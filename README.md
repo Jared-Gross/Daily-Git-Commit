@@ -27,8 +27,9 @@ I will be showing you how to set this up using task sceduler on windows.
 5.  Head over to the "Triggers" tab, and create a "New" trigger.
 6.  Set the trigger to DAILY (or how ever you want :) ) and set the time how ever you want. Make sure the "Status" is: "Enabled"
 7.  Next go to the "Actions" tab. (This is where we specify what program to run.
-8.  Press "Browse" and go to the path of the `main.py` script and double click it. There is no need for additional arguments. Press OK.
+8.  Press "Browse" and go to the path of the `run.bat` script and double click it. There is no need for additional arguments. Press OK.
 9.  There are a few additions settings you can change in the "Settings" tab, such as if the task fails restart it every couple seconds, maybe a network error. Run task ASAP. There is not more to setup, this is pretty much it for windows setup.
+10.  **NOTE** Make sure you edit the `run.bat` file to the correct paths.
 
 If there are errors that occur, open up an issue and I will get it fixed ASAP.
 
@@ -40,7 +41,7 @@ I will be using `crontab`.
 2.  Add the following line: `59 23 * * * cd /path/to/script/folder/ ; /usr/bin/env /usr/local/bin/python3.8 /path/to/script/main.py`
 3.  Thats it! Make sure you save and exit.
 
-Note. There may be git config issues, I solved them by generating a GitHub token in the developer settings. Using the github token as a login for git.
+Note. There may be git config issues, I solved them by generating a GitHub token in the developer settings. Using the github token as a login for git, make sure git is logged in your system.
 
 Additional information about [crontab](https://crontab.guru)
 ## WHY?!
