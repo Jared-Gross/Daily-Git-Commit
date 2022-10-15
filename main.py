@@ -1,8 +1,14 @@
 import yaml
 from datetime import datetime
 from git import Repo
+from win10toast import ToastNotifier
 
 FILE_TO_COMMIT_NAME: str = 'update_me.yaml'
+
+#Windows Notification toast
+def push_notification_toast():
+    notifier = ToastNotifier()
+    notifier.show_toast("Daily Git Commit", "Daily Git commited successfully")
 
 def update_file_to_commit():
     # read file contents to figure out how many times we commited.
@@ -24,3 +30,4 @@ def commit_repository(YAML_FILE):
 
 if __name__ == '__main__': 
     commit_repository(update_file_to_commit())
+    push_notification_toast()
