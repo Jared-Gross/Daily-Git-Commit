@@ -1,8 +1,19 @@
 import yaml
 from datetime import datetime
 from git import Repo
+from plyer import notification
 
 FILE_TO_COMMIT_NAME: str = 'update_me.yaml'
+
+def commit_notification():
+    notification.notify(
+        title='Daily Git Commit',
+        message='Daily Git commited successfully',
+        app_name='Daily-Git-Commit',
+        app_icon='git.ico',
+        timeout=10
+        )
+    return
 
 def update_file_to_commit():
     # read file contents to figure out how many times we commited.
@@ -24,3 +35,4 @@ def commit_repository(YAML_FILE):
 
 if __name__ == '__main__': 
     commit_repository(update_file_to_commit())
+    commit_notification()
