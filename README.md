@@ -13,7 +13,7 @@ Commit to repo every day for the perfect commit streak
 1. 	Download this repository.
 2. 	Create your own repository on your GitHub account.
 3. 	It's very important to first commit the `update_me.yaml` file first before you begin the daily commit.
-4. 	That's really it.. Assuming your logged into git on your system it should work fine.
+4. 	That's really it.. Assuming you're logged into git on your system it should work fine.
 
 Now that your repository and git is setup, its time to set up the most important part. DAILY commit. Since the script handles all of the updates and processing, all we need to do is call that script. There are alot of ways to achieve this, depending on what operating system you are on. Below are instructions for both Windows and Linux solutions, you can do this how ever you feel. 
 
